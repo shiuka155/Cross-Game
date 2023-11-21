@@ -10,7 +10,13 @@ screen.setup(width=600, height=600)
 screen.tracer(0)
 screen.bgcolor("black")
 
+# create turtle
 player = Player()
+
+# create response on key
+screen.listen()
+screen.onkey()
+
 
 game_is_on = True
 while game_is_on:

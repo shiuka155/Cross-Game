@@ -13,3 +13,7 @@ class Player(Turtle):
         self.color("red")
         self.left(90)
         self.goto(STARTING_POSITION)
+
+    def player_move_up(self):
+        self.new_y = self.ycor() + MOVE_DISTANCE
+        self.goto(self.xcor(),self.new_y)
