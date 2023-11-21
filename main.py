@@ -15,7 +15,7 @@ player = Player()
 
 # create response on key
 screen.listen()
-screen.onkey()
+screen.onkey(player.move_up, "Up")
 
 
 game_is_on = True
