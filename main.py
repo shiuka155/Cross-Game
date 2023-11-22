@@ -1,3 +1,4 @@
+import random
 import time
 from turtle import Screen
 from player import Player
@@ -27,11 +28,17 @@ game_is_on = True
 while game_is_on:
     time.sleep(0.05)
     screen.update()
-    # if turtle.ycor() >= 290:
-    #     game_is_on = False
-    #     print("Done")
+
     for car in cars:
         car.move()
         if car.xcor() < - 300:
             car.reset_position()
+
+    if turtle.ycor() >= 300:
+        turtle.restart()
+        scoreboard.level_up()
+        for car in cars:
+            car.speed_up()
+
+
 
