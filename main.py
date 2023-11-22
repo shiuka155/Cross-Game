@@ -33,12 +33,17 @@ while game_is_on:
         car.move()
         if car.xcor() < - 300:
             car.reset_position()
+        if turtle.distance(car) < 20:
+            scoreboard.game_over()
+            game_is_on = False
 
     if turtle.ycor() >= 300:
         turtle.restart()
         scoreboard.level_up()
         for car in cars:
+            car.reset_position()
             car.speed_up()
 
 
+screen.exitonclick()
 
