@@ -14,14 +14,20 @@ class CarManager(Turtle):
         self.shapesize(stretch_wid=1,stretch_len=2)
         self.penup()
         self.reset_position()
+        self.my_speed = STARTING_MOVE_DISTANCE
+
+
+
+    def speed_up(self):
+        self.my_speed += MOVE_INCREMENT
 
 
     def reset_position(self):
-        self.random_y_respawn = random.randrange(-300, 300, 20)
+        self.random_y_respawn = random.randrange(-300, 300, 30)
         self.random_x_respawn = random.randrange(300,500, 30)
         self.goto(self.random_x_respawn, self.random_y_respawn)
 
     def move(self):
-        new_x = self.xcor() - MOVE_INCREMENT
+        new_x = self.xcor() - self.my_speed
         self.goto(new_x, self.ycor())
 
